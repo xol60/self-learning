@@ -1,0 +1,175 @@
+.header {
+    width: 100%;
+    height: 110px;
+    display: flex;
+
+    .left-content {
+        width: 25%;
+        display: flex;
+
+        i {
+            width: 50px;
+            height: 50px;
+            margin: 30px
+        }
+
+        .logo {
+            background: url('../../assets/images/bookingcare-2020.svg') center center no-repeat;
+            width: 300px;
+            height: 100px;
+        }
+    }
+
+    .center-content {
+        width: 50%;
+        display: flex;
+        margin-left: 20px;
+        margin-top: 30px;
+
+        .child-center {
+            margin: 10px;
+            font-size: 13px;
+        }
+    }
+
+    .right-content {
+        width: 25%;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+
+        .support {
+            display: flex;
+            width: 100px;
+
+            i {
+                font-size: 20px;
+            }
+        }
+
+        .language-vi {
+            cursor: pointer;
+            margin: 0 10;
+            text-transform: uppercase;
+            width: 30px;
+
+            &.active {
+                color: rgb(32, 212, 23);
+            }
+        }
+
+        .language-vi:hover {
+            cursor: pointer;
+            margin: 0 10;
+            text-transform: uppercase;
+            width: 30px;
+            color: red;
+        }
+
+        .language-en {
+            cursor: pointer;
+            margin: 0 10;
+            width: 30px;
+            text-transform: uppercase;
+
+            &.active {
+                color: rgb(32, 212, 23);
+            }
+        }
+
+        .language-en:hover {
+            cursor: pointer;
+            margin: 0 10;
+            width: 30px;
+            text-transform: uppercase;
+            color: red
+        }
+    }
+}
+
+.header-content {
+
+    border: 1px solid transparent;
+    width: 100%;
+    height: 500px;
+    background: url('../../assets/images/bookingcare-cover-4.jpg');
+    background-position: revert;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    .hello-content {
+        margin-top: 100px;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+
+        .test1-content {
+            font-size: 30px;
+            color: white;
+            text-shadow: 2px 2px #000000;
+        }
+
+        .test2-content {
+            font-size: 35px;
+            color: white;
+            text-shadow: 2px 2px #000000;
+        }
+
+        .search-content {
+            display: flex;
+            border: 2px solid yellow;
+            border-radius: 12px;
+            height: 40px;
+            width: 400px;
+            justify-content: center;
+            align-items: center;
+            background-color: yellow;
+            margin: 0 auto;
+
+            input {
+                margin-left: 10px;
+                height: 40px;
+                width: 350px;
+                background: transparent;
+                border: none;
+                outline: none;
+            }
+        }
+    }
+
+    .function-content {
+        margin-top: 100px;
+        display: flex;
+        text-align: center;
+        gap: 15%;
+        margin: 100px;
+
+        .child-content {
+            text-align: center;
+            width: 100px;
+
+            .icon-content {
+                border-radius: 50%;
+
+                display: inline-block;
+                background: white;
+                box-shadow: 1px 1px #000;
+                text-align: center;
+                height: 40px;
+                width: 60px;
+
+                i {
+                    margin-top: 7px;
+                    font-size: 25px;
+                    color: rgb(50, 155, 155)
+                }
+            }
+
+            .sub-content {
+                font-size: 15px;
+                color: white;
+                text-shadow: 2px 2px #000000;
+            }
+        }
+    }
+}

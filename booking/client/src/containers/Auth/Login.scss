@@ -1,0 +1,78 @@
+.container {
+    background: linear-gradient(to left, green, white);
+    color: white;
+    min-height: 100%;
+    position: fixed;
+    min-width: 100%;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+
+
+    .form-box {
+        width: 30%;
+        height: 100%;
+        background-color: black;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        opacity: 0.5;
+        border-radius: 2%;
+        justify-content: center;
+
+        button {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            width: 100%
+        }
+
+        button:hover {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            width: 100%;
+            background-color: blue;
+        }
+
+        .header-form {
+            margin-bottom: 15px;
+        }
+
+        .input-group-prepend {
+            height: 40px;
+
+            .input-group-text {
+                height: 40px;
+            }
+
+
+        }
+
+    }
+
+
+
+    .message {
+        display: flex;
+        justify-content: space-between
+    }
+
+    .social {
+        display: flex;
+        justify-content: space-around;
+        padding: 30px;
+
+        i {
+            font-size: 35px;
+        }
+
+        i:hover {
+            color: red;
+            cursor: pointer;
+        }
+    }
+}
