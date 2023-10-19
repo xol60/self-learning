@@ -4,6 +4,7 @@ import './Header.scss'
 import { FormattedMessage } from 'react-intl';
 import { languages } from '../../utils'
 import { changeLanguage } from '../../store/actions';
+
 class Header extends Component {
     handleChangeLanguage = (id) => {
         this.props.changeLanguageDispatch(id)
