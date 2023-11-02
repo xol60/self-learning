@@ -4,10 +4,13 @@ import './Header.scss'
 import { FormattedMessage } from 'react-intl';
 import { languages } from '../../utils'
 import { changeLanguage } from '../../store/actions';
-
+import { Redirect } from 'react-router';
 class Header extends Component {
     handleChangeLanguage = (id) => {
         this.props.changeLanguageDispatch(id)
+    }
+    handleGoHomepage() {
+        return (<Redirect to='/home-page' push={true} ></Redirect>)
     }
     render() {
         console.log(this.props.language)
@@ -18,7 +21,7 @@ class Header extends Component {
                     <div className='left-content'>
 
                         <i class="fas fa-bars"></i>
-                        <div className='logo'>
+                        <div className='logo' onClick={this.handleGoHomepage}>
 
                         </div>
                     </div>
@@ -65,7 +68,7 @@ class Header extends Component {
                         </div>
                     </div>
                 </div>
-                <div className="header-content">
+                {this.props.isShowBanner && (<div className="header-content">
                     <div className='hello-content'>
                         <div className='test1-content '>
                             <FormattedMessage id='content.foundation' />
@@ -121,7 +124,7 @@ class Header extends Component {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>)}
             </React.Fragment>)
     }
 
@@ -140,4 +143,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Header);
+export default connect(mapStateToProps, mapDispatchToProps)(Header)

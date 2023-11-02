@@ -4,7 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 import { ConnectedRouter as Router } from 'connected-react-router';
 import { history } from '../redux'
 import { ToastContainer } from 'react-toastify';
-
+import 'react-toastify/dist/ReactToastify.css';
 
 import { userIsAuthenticated, userIsNotAuthenticated } from '../hoc/authentication';
 
@@ -15,6 +15,7 @@ import Login from './Auth/Login'
 import Header from './Header/Header';
 import System from '../routes/System';
 import Homepage from './HomePage/Homepage';
+import Doctor from './Detail/Doctor/Doctor';
 import { CustomToastCloseButton } from '../components/CustomToast';
 import ConfirmModal from '../components/ConfirmModal';
 import CustomScrollbars from '../components/CustomScrollbars';
@@ -45,22 +46,20 @@ class App extends Component {
                     <div className="main-container">
                         <CustomScrollbars style={{ width: '100%', height: '100vh' }} >
                             <ConfirmModal />
-                            {this.props.isLoggedIn && <Header />}
+
 
                             <span className="content-container">
                                 <Switch>
-                                    <Route path={path.HOME} exact component={(Home)} />
+                                    {/* <Route path={path.HOME} exact component={(Home)} /> */}
                                     <Route path={path.LOGIN} component={userIsNotAuthenticated(Login)} />
                                     <Route path={path.SYSTEM} component={userIsAuthenticated(System)} />
-                                    <Route path={path.HOMEPAGE} component={userIsNotAuthenticated(Homepage)} />
+                                    <Route path={path.HOMEPAGE} component={Homepage} />
+                                    <Route path='/doctor/:id' component={Doctor} />
                                 </Switch>
                             </span>
 
                             <ToastContainer
-                                className="toast-container" toastClassName="toast-item" bodyClassName="toast-item-body"
-                                autoClose={false} hideProgressBar={true} pauseOnHover={false}
-                                pauseOnFocusLoss={true} closeOnClick={false} draggable={false}
-                                closeButton={<CustomToastCloseButton />}
+
                             />
                         </CustomScrollbars>
                     </div>

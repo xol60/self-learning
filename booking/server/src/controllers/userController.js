@@ -2,7 +2,7 @@ const db = require('../models')
 const userService = require('../services/userService')
 let getAllUser = async (req, res) => {
     const users = await userService.getAllUser()
-    console.log(users)
+
     res.status(200).send(users)
 }
 let getUserById = async (req, res) => {
@@ -23,10 +23,23 @@ let registerUser = async (req, res) => {
         data
     )
 }
+let addSchedules = async (req, res) => {
+    const data = await userService.addScheduleslist(req.body)
+    return res.status(200).send(data)
+}
+let getSchedule = async (req, res) => {
+    const data = await userService.getScheduleByDate({
+        doctorId: req.query.doctorId,
+        date: req.query.date
+    })
+    return res.status(200).send(data)
+}
 module.exports = {
     getAllUser: getAllUser,
     getUserById: getUserById,
     updateUserById: updateUserById,
     acOrInacUserById: acOrInacUserById,
-    registerUser: registerUser
+    registerUser: registerUser,
+    addSchedules: addSchedules,
+    getSchedule: getSchedule
 }

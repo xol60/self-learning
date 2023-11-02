@@ -5,7 +5,8 @@ const initialState = {
     userInfo: null
 }
 
-const appReducer = (state = initialState, action) => {
+const userReducer = (state = initialState, action) => {
+    console.log(initialState)
     switch (action.type) {
         case actionTypes.USER_LOGIN_SUCCESS:
             return {
@@ -20,6 +21,7 @@ const appReducer = (state = initialState, action) => {
                 userInfo: null
             }
         case actionTypes.PROCESS_LOGOUT:
+            console.log(666)
             return {
                 ...state,
                 isLoggedIn: false,
@@ -30,4 +32,4 @@ const appReducer = (state = initialState, action) => {
     }
 }
 
-export default appReducer;
+export default userReducer;

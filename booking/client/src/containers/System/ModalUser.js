@@ -55,51 +55,51 @@ class ModalUser extends Component {
                 <ModalHeader toggle={() => this.toggle()}>Create a new user</ModalHeader>
                 <ModalBody>
                     <div >
-                        <div class="row">
-                            <div class="form-row">
-                                <div class="form-group col-md-6">
+                        <div className="row">
+                            <div className="form-row">
+                                <div className="form-group col-md-6">
                                     <label for="inputEmail4">First Name</label>
-                                    <input class="form-control" placeholder="John" name="firstName" onChange={(event) => { this.handleOnChange(event, 'firstName') }} />
+                                    <input className="form-control" placeholder="John" name="firstName" onChange={(event) => { this.handleOnChange(event, 'firstName') }} />
                                 </div>
-                                <div class="form-group col-md-6">
+                                <div className="form-group col-md-6">
                                     <label for="inputPassword4">Last Name</label>
-                                    <input class="form-control" placeholder="Smith" name="lastName" onChange={(event) => { this.handleOnChange(event, 'lastName') }} />
+                                    <input className="form-control" placeholder="Smith" name="lastName" onChange={(event) => { this.handleOnChange(event, 'lastName') }} />
                                 </div>
                             </div>
-                            <div class="form-row">
-                                <div class="form-group col-md-6">
+                            <div className="form-row">
+                                <div className="form-group col-md-6">
                                     <label for="inputEmail4">Email</label>
-                                    <input type="email" class="form-control" id="inputEmail4" placeholder="Email" name="email" onChange={(event) => { this.handleOnChange(event, 'email') }} />
+                                    <input type="email" className="form-control" id="inputEmail4" placeholder="Email" name="email" onChange={(event) => { this.handleOnChange(event, 'email') }} />
                                 </div>
-                                <div class="form-group col-md-6">
+                                <div className="form-group col-md-6">
                                     <label for="inputPassword4">Password</label>
-                                    <input type="password" class="form-control" id="inputPassword4" placeholder="Password"
+                                    <input type="password" className="form-control" id="inputPassword4" placeholder="Password"
                                         name="password" onChange={(event) => { this.handleOnChange(event, 'password') }} />
                                 </div>
                             </div>
-                            <div class="form-group">
+                            <div className="form-group">
                                 <label for="inputAddress">Address</label>
-                                <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" name="address"
+                                <input type="text" className="form-control" id="inputAddress" placeholder="1234 Main St" name="address"
                                     onChange={(event) => { this.handleOnChange(event, 'address') }} />
                             </div>
 
-                            <div class="form-row">
-                                <div class="form-group col-md-6">
+                            <div className="form-row">
+                                <div className="form-group col-md-6">
                                     <label for="inputCity">Phone number</label>
-                                    <input type="text" class="form-control" name="phoneNumber"
+                                    <input type="text" className="form-control" name="phoneNumber"
                                         onChange={(event) => { this.handleOnChange(event, 'phoneNumber') }} />
                                 </div>
-                                <div class="form-group col-md-4">
+                                <div className="form-group col-md-4">
                                     <label for="inputState">Sex</label>
-                                    <select class="form-control" name="genderId"
+                                    <select className="form-control" name="genderId"
                                         onChange={(event) => { this.handleOnChange(event, 'genderId') }}>
                                         <option value="1">Male</option>
                                         <option value="0">Female</option>
                                     </select>
                                 </div>
-                                <div class="form-group col-md-2">
+                                <div className="form-group col-md-2">
                                     <label for="inputState">Role</label>
-                                    <select class="form-control" name="roleId"
+                                    <select className="form-control" name="roleId"
                                         onChange={(event) => { this.handleOnChange(event, 'roleId') }}>
                                         <option value="1">Admin</option>
                                         <option value="0">Doctor</option>

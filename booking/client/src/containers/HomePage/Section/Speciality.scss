@@ -88,21 +88,28 @@
     background-color: #f5f5f5;
 
     .slick-slider {
-        .slick-child {
-            text-align: center;
+        .slick-slide {
+            min-width: 400px;
 
-            .slick-image {
-                background: url('../../../assets/images/section/snowman.jpeg') center center no-repeat;
-                border-radius: 50%;
-                width: 150px;
-                height: 150px;
-                margin: 10px 0 0 33%
-            }
-
-
-            .slick-sub {
-                font-size: 12px;
+            .slick-child {
                 text-align: center;
+                width: 100px;
+                cursor: pointer;
+
+                .slick-image {
+                    // background: url('../../../assets/images/section/snowman.jpeg') center center no-repeat;
+                    background: center center no-repeat;
+                    border-radius: 50%;
+                    width: 150px;
+                    height: 150px;
+                    margin: 10px 0 0 33%
+                }
+
+
+                .slick-sub {
+                    font-size: 12px;
+                    text-align: center;
+                }
             }
         }
     }

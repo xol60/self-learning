@@ -1,0 +1,150 @@
+.doctor-content {
+    margin: 150px 50px;
+    display: block;
+
+    .doctor-intro {
+        display: flex;
+        height: 200px;
+
+        .doctor-image {
+            width: 20%;
+
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            margin: 18px 5% 0 5%;
+
+
+        }
+
+        .doctor-description {
+            width: 50%;
+
+
+            .doctor-name {
+                font-size: 20px;
+
+            }
+
+            .doctor-info {
+                font-size: 14px;
+            }
+        }
+    }
+
+    .doctor-quill {
+        height: 800px;
+        width: 90%;
+
+        .quill {
+            margin-left: 5%
+        }
+    }
+}
+
+.schedule-doctor {
+    display: flex;
+
+    .content-left {
+        width: 70%;
+
+        .times {
+            height: 200px;
+
+            .commit-time {
+                background-color: aqua;
+                margin: 15px;
+            }
+
+            .commit-time:hover {
+                background-color: yellow;
+                margin: 15px;
+            }
+        }
+    }
+
+    .content-right {
+        display: inline;
+        width: 30%;
+        margin-top: 50px;
+
+        .address {
+            font-size: 15px;
+            text-transform: uppercase;
+
+        }
+
+        .name-clinic {
+            font-size: 13px;
+            font-weight: 700
+        }
+
+        .address-clinic {
+            font-size: 13px;
+        }
+
+        .price-clinic {
+            font-size: 15px;
+            text-transform: uppercase;
+        }
+
+        .price-clinic {
+            display: flex;
+            border-top: 1px solid black;
+            border-bottom: 1px solid black;
+
+            .name-price {
+                font-size: 15px;
+                text-transform: uppercase;
+            }
+
+            .price {
+                font-size: 15px;
+                margin: 0px 5px
+            }
+
+            .more-detail {
+                font-size: 15px;
+                color: rgb(48, 130, 130)
+            }
+        }
+
+        .note-open {
+            border-top: 1px solid black;
+            border-bottom: 1px solid black;
+
+            .name-price {
+                font-size: 15px;
+                text-transform: uppercase;
+                margin-top: 14px;
+            }
+
+            .note-clinic {
+                font-size: 13px;
+                margin: 20px 5px 0px;
+
+                border: 1px solid black;
+                background-color: rgb(169, 177, 184);
+
+                .price-clinic-open {
+                    text-transform: uppercase;
+                }
+
+                .price {
+                    font-size: 15px;
+                    float: right
+                }
+            }
+
+            .less-detail {
+                margin-top: 10px;
+                font-size: 15px;
+                color: rgb(48, 130, 130)
+            }
+        }
+
+    }
+}

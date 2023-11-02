@@ -31,7 +31,7 @@ class Login extends Component {
         }
     }
     render() {
-
+        // console.log(this.props.userInfo)
         return (
             <div className="container">
                 <div className="form-box">
@@ -80,7 +80,8 @@ class Login extends Component {
 
 const mapStateToProps = state => {
     return {
-        lang: state.app.language
+        lang: state.app.language,
+        userInfo: state.user.userInfo
     };
 };
 

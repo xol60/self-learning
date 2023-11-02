@@ -22,9 +22,9 @@ class Footer extends Component {
                     </div>
                     <div className='video'>
                         <iframe width='82%' height='350px' src="https://www.youtube.com/embed/h00db_INbqI"
-                            title="[EnA][Vietsub + Kara] OST Kimi no nawa - Zen zen zense" frameborder="0"
+                            title="[EnA][Vietsub + Kara] OST Kimi no nawa - Zen zen zense" frameBorder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowfullscreen></iframe>
+                            allowFullScreen></iframe>
                     </div>
                 </div>
             </React.Fragment>)

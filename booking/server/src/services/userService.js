@@ -1,6 +1,10 @@
 const db = require('../models')
 const bcrypt = require('bcrypt')
 const saltRounds = 10;
+const moment = require('moment')
+const sequelize = require('../config/connectDB')
+const _ = require('lodash')
+const { Op } = require('sequelize');
 let registerUser = (data) => {
     return new Promise(async (resolve, reject) => {
         try {
@@ -20,7 +24,7 @@ let registerUser = (data) => {
             }
             const { genderId, ...reUser } = {
                 ...data,
-                gender: data.genderId == '1' ? true : false,
+                gender: data.genderId,
                 password: await bcrypt.hash(data.password, saltRounds),
                 createdAt: new Date(),
                 updatedAt: new Date()
@@ -126,10 +130,78 @@ let activeOrInactiveUserById = async (userId) => {
         }
     })
 }
+let addScheduleslist = (listSchedule) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            const existSchedule = await db.Schedule.findAll(
+                {
+                    attributes: ['doctorId', 'date', 'timeType'],
+                    raw: true
+                }
+            )
+            const eSchedule = existSchedule.map(schedule => ({
+                doctorId: schedule.doctorId + '',
+                date: moment(schedule.date).format('MM/DD/YYYY'),
+                timeType: schedule.timeType
+            }))
+            const data = listSchedule.map(schedule => ({
+                ...schedule,
+                maxNumber: 10,
+                currentNumber: 0
+            }))
+            let newArray = _.differenceWith(
+                listSchedule, eSchedule, _.isEqual);
+            if (newArray.length != data.length) {
+                resolve({
+                    errorCode: 1,
+                    data: 'Schedule has already been created'
+                })
+            }
+            else {
+                const dataSchedule = await db.Schedule.bulkCreate(data)
+                resolve({
+                    errorCode: 0
+                })
+            }
+        } catch (e) {
+            console.log(e)
+            reject(e)
+        }
+    })
+}
+let getScheduleByDate = (data) => {
+    return (
+        new Promise(async (resolve, reject) => {
+            try {
+
+                const schedules = await db.Schedule.findAll({
+                    where: {
+                        doctorId: +data.doctorId,
+                        [Op.and]: [
+                            sequelize.where(sequelize.fn('date', sequelize.col('date')), '=', data.date),
+                        ]
+                    },
+                    include: [{ model: db.Allcode, as: 'timeData', attributes: ['valueEn', 'valueVi'], raw: true }],
+
+                })
+
+                resolve({
+                    errorCode: 0,
+                    data: schedules
+                })
+            } catch (e) {
+                reject(e)
+            }
+        })
+    )
+
+}
 module.exports = {
     getAllUser: getAllUser,
     getUserById: getUserById,
     updateUserById: updateUserById,
     activeOrInactiveUserById: activeOrInactiveUserById,
-    registerUser: registerUser
+    registerUser: registerUser,
+    addScheduleslist: addScheduleslist,
+    getScheduleByDate: getScheduleByDate
 }

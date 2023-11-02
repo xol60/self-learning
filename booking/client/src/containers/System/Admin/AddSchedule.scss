@@ -1,0 +1,25 @@
+.schedule-doctor {
+    margin: 100px 100px 50px 100px;
+
+    .select {
+        display: flex;
+
+        .css-b62m3t-container {
+
+            width: 40%;
+        }
+
+        label {
+            margin: 0px 15px;
+        }
+    }
+}
+
+.list-time {
+    margin: 50px;
+
+    .time-child {
+        margin: 10px;
+        border: 1px solid red
+    }
+}

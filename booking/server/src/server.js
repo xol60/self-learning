@@ -1,7 +1,15 @@
 const express = require('express')
 const viewEngine = require('./config/viewEngine')
-const connectDB = require('./config/connectDB')
 const bodyParser = require('body-parser')
+const sequelize = require('./config/connectDB')
+const connectDB = async () => {
+    try {
+        await sequelize.authenticate();
+        console.log('Connection has been established successfully.');
+    } catch (error) {
+        console.error('Unable to connect to the database:', error);
+    }
+}
 const initWebRoutes = require('./routes')
 const cors = require('cors')
 require('dotenv').config()
@@ -11,9 +19,11 @@ const corsOptions = {
     credentials: true,            //access-control-allow-credentials:true
     optionSuccessStatus: 200
 }
+
 app.use(cors(corsOptions));
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.json({ limit: '200mb', extended: true }));
+app.use(bodyParser.urlencoded({ limit: "20mb", extended: true, parameterLimit: 50000 }));
+app.use(bodyParser.text({ limit: '200mb' }));
 
 viewEngine(app)
 connectDB()

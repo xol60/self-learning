@@ -4,22 +4,31 @@ import { connect } from 'react-redux';
 import './UserManage.scss'
 import axios from '../../axios'
 import ModalUser from './ModalUser';
+import ModalImage from './ModalImage';
 import { deleteUserApi } from '../../services/userService';
+import * as actions from '../../store/actions'
+import { ToBase64 } from '../../utils';
 class UserManage extends Component {
 
     constructor(props) {
         super(props)
         this.state = {
             arrUsers: [],
-            isUserModalOpen: false
+            isUserModalOpen: false,
+            isImageModalOpen: false,
+            imageBase: ''
         }
     }
 
     async componentDidMount() {
-        let res = await axios.get('/api/get-all')
-        if (res && res.errorCode == 0) {
+        await this.props.getUsers()
+    }
+    componentDidUpdate(prepProps) {
+        if (prepProps.users != this.props.users) {
+            const copyState = { ...this.state }
+            copyState.arrUsers = this.props.users
             this.setState({
-                arrUsers: res.data
+                ...copyState
             })
         }
     }
@@ -29,9 +38,13 @@ class UserManage extends Component {
         })
     }
     toggleUserModal() {
-
         this.setState({
             isUserModalOpen: !this.state.isUserModalOpen
+        })
+    }
+    toggleImageModal() {
+        this.setState({
+            isImageModalOpen: !this.state.isImageModalOpen
         })
     }
     async createNewUser(data) {
@@ -49,6 +62,22 @@ class UserManage extends Component {
             alert(res.data.message)
         }
         catch (e) { console.log(e) }
+    }
+    toggleImageModal() {
+        this.setState({
+            isImageModalOpen: !this.state.isImageModalOpen
+        })
+    }
+    handleOpenImage(data) {
+        const copyState = this.state;
+
+        const imageBase64 = new Buffer(data, 'base64').toString('binary')
+        copyState.imageBase = imageBase64
+        console.log(data)
+        this.setState({
+            ...this.copyState
+        })
+        this.toggleImageModal()
     }
     async handleDelete(id) {
         try {
@@ -68,11 +97,13 @@ class UserManage extends Component {
     }
     render() {
         let arrUsers = this.state.arrUsers
-        console.log(arrUsers)
         return (
             <div className='table-form'>
                 <ModalUser open={this.state.isUserModalOpen} toggleParent={() => this.toggleUserModal()}
                     createNewUser={(data) => this.createNewUser(data)} />
+                <ModalImage open={this.state.isImageModalOpen} toggleParent={() => this.toggleImageModal()}
+                    data={this.state.imageBase}
+                />
                 <div className="text-center">Manage users</div>
                 <button className='add-user' onClick={() => this.handleCreateUser()}>
                     <i class="fas fa-plus">Add New User</i>
@@ -83,6 +114,7 @@ class UserManage extends Component {
                             <thead>
                                 <tr>
                                     <th>Email</th>
+                                    <th>Image</th>
                                     <th>Name</th>
                                     <th>Address</th>
                                     <th>Status</th>
@@ -98,6 +130,11 @@ class UserManage extends Component {
                                     return (
                                         <tr>
                                             <td>{item.email}</td>
+                                            <td>
+                                                <span onClick={() => { this.handleOpenImage(item.image) }} >
+                                                    <i class="fas fa-plus" />
+                                                </span>
+                                            </td>
                                             <td>{item.firstName + item.lastName}.</td>
                                             <td>{item.address}</td>
                                             <td>{item.isActive == 1 ? 'Active' : 'Inactive'}</td>
@@ -124,11 +161,13 @@ class UserManage extends Component {
 
 const mapStateToProps = state => {
     return {
+        users: state.admin.users
     };
 };
 
 const mapDispatchToProps = dispatch => {
     return {
+        getUsers: () => dispatch(actions.fetchGetUserStart())
     };
 };
 
