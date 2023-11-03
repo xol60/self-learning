@@ -45,6 +45,7 @@ class Doctor extends Component {
                             <div className='doctor-info'>
                                 {doctor.Markdown?.contentDescription}
                             </div>
+                            <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-width="40px" data-layout="" data-action="" data-size="" data-share="true"></div>
                         </div>
                     </div>
                     <Schedule idDoctor={this.props.match.params.id} />
@@ -56,7 +57,7 @@ class Doctor extends Component {
                         />
                     </div>
                     <div >
-
+                        <div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-width="" data-numposts="5"></div>
                     </div>
                 </div>
             </React.Fragment>

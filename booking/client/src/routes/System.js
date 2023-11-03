@@ -7,6 +7,7 @@ import AddUser from '../containers/System/Admin/AddUser';
 import Header from '../containers/Header/Header';
 import DoctorSchedule from '../containers/System/User/DoctorSchedule';
 import AddSchedule from '../containers/System/Admin/AddSchedule';
+import AddSpeciality from '../containers/System/Admin/AddSpeciality';
 class System extends Component {
     render() {
         const { systemMenuPath, userInfo, doctorMenuPath } = this.props;
@@ -21,6 +22,7 @@ class System extends Component {
                         <Route path="/system/doctor-manage" component={DoctorManage} />
                         <Route path="/system/manage/doctor-schedule" component={DoctorSchedule} />
                         <Route path="/system/schedule-add" component={AddSchedule} />
+                        <Route path="/system/speciality-add" component={AddSpeciality} />
                         {userInfo.roleId == 'R1' ? <Route component={() => { return (<Redirect to={systemMenuPath} />) }} /> : <Route component={() => { return (<Redirect to={doctorMenuPath} />) }} />}
                     </Switch>
                 </div>

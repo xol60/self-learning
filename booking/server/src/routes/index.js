@@ -4,6 +4,7 @@ const authController = require('../controllers/authController')
 const appController = require('../controllers/appController')
 const doctorController = require('../controllers/doctorController')
 const markdownController = require('../controllers/markdownController')
+const paitentController = require('../controllers/paitentController')
 let router = express.Router();
 
 let initWebRoutes = (app) => {
@@ -21,6 +22,7 @@ let initWebRoutes = (app) => {
     router.post('/api/schedule-add', userController.addSchedules)
     router.get('/api/get-schedule', userController.getSchedule)
     router.get('/api/get-doctor-info', doctorController.getDoctorInfo)
+    router.post('/api/add-booking', paitentController.addNewBooking)
     return app.use("/", router);
 }
 

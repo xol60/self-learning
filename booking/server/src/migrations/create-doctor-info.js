@@ -32,6 +32,13 @@ module.exports = {
             count: {
                 type: Sequelize.INTEGER
             },
+            clinicId: {
+                type: Sequelize.INTEGER
+            },
+            specialtyId
+                : {
+                type: Sequelize.INTEGER
+            },
             createdAt: {
                 allowNull: false,
                 type: Sequelize.DATE,

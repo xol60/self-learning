@@ -56,7 +56,8 @@
                 "schedule-add": "Schedule Registration"
             },
             "manage-speciality": {
-                "header": "Speciality Management"
+                "header": "Speciality Management",
+                "add": "Add new Speciality"
             },
             "manage-clinic": {
                 "header": "Clinic Management"

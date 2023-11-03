@@ -1,0 +1,17 @@
+.speciality-doctor {
+    margin: 50px 100px 0px;
+
+    .row {
+        label {
+            margin: 5px;
+        }
+
+        .image-speciality {
+            width: 100px;
+            height: 100px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    }
+}

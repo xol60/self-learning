@@ -17,8 +17,8 @@ export const adminMenu = [
     },
     {
         name: 'menu.admin.manage-speciality.header', menus: [
-
-        ],
+            { name: 'menu.admin.manage-speciality.add', link: '/system/speciality-add' }
+        ]
     },
     {
         name: 'menu.admin.manage-clinic.header', menus: [

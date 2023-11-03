@@ -139,6 +139,7 @@ let addScheduleslist = (listSchedule) => {
                     raw: true
                 }
             )
+            console.log(listSchedule)
             const eSchedule = existSchedule.map(schedule => ({
                 doctorId: schedule.doctorId + '',
                 date: moment(schedule.date).format('MM/DD/YYYY'),
@@ -173,7 +174,7 @@ let getScheduleByDate = (data) => {
     return (
         new Promise(async (resolve, reject) => {
             try {
-
+                console.log(data.date)
                 const schedules = await db.Schedule.findAll({
                     where: {
                         doctorId: +data.doctorId,

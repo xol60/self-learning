@@ -18,6 +18,8 @@ class Schedule extends Component {
             schedules: [],
             selectedDate: [],
             isShowModal: false,
+            currentDate: '',
+            infor: {}
         })
     }
     async componentDidMount() {
@@ -61,12 +63,18 @@ class Schedule extends Component {
             date: moment(time).format('YYYY-MM-DD')
         })
         this.setState({
-            schedules: data
+            schedules: data,
+            currentDate: moment(time).format('YYYY-MM-DD')
         })
     }
-    toggleFromParent = () => {
-        console.log(777)
+    toggleFromParent = (timeTypeInput) => {
+
         this.setState({
+            infor: {
+                doctorId: this.props.idDoctor,
+                date: this.state.currentDate,
+                timeType: timeTypeInput
+            },
             isShowModal: !this.state.isShowModal
         })
     }
@@ -75,7 +83,7 @@ class Schedule extends Component {
 
         return (
             <React.Fragment>
-                <Booking isShowModal={this.state.isShowModal} toggle={() => this.toggleFromParent()} />
+                <Booking isShowModal={this.state.isShowModal} infor={this.state.infor} toggle={() => this.toggleFromParent()} />
                 <div className='schedule-doctor'>
                     <div className='content-left'>
                         <div>Lich kham</div>
@@ -88,7 +96,8 @@ class Schedule extends Component {
                             {
                                 schedules.length != 0 ? <>
                                     {schedules.map((schedule) => {
-                                        return (<button className='commit-time' onClick={this.toggleFromParent}>{schedule.timeData?.valueEn}</button>)
+                                        console.log(schedule)
+                                        return (<button className='commit-time' onClick={() => this.toggleFromParent(schedule.timeType)}>{schedule.timeData?.valueEn}</button>)
                                     })}
                                     <div>Chọn  và đặt (Phí đặt lịch 0đ)</div>
                                 </> : <div style={{ color: "red" }}>Chua co lich vao thoi gian nay</div>

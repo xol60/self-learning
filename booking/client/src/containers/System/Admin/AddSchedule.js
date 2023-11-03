@@ -28,6 +28,7 @@ class AddSchedule extends Component {
         await this.props.getTimeList()
     }
     handleChangeDate(date) {
+
         this.setState({
             dayChoose: date
         })
