@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.image-list {
+    height: 100vh;
+    background-color: #dadada;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 5rem
+}
+
+
+.image-card {
+    width: 15rem;
+    height: 30%;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 1.3rem
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: 0.25s;
+}
+
+.image-card img:hover {
+    transform: scale(1.2);
+
+}
+
+.gallery {
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    transition: 0.25s;
+    color: white;
+    font-size: 1.5rem;
+    margin: auto;
+    display: flex;
+    opacity: 0;
+
+}
+
+.selected-image {
+    width: 70%;
+    height: 70%;
+    margin: auto;
+    transform: scale(0.8)
+}
+
+
+.action {
+    position: absolute;
+    top: 50%;
+    cursor: pointer;
+}
+
+.close-button {
+    position: absolute;
+    top: 5%;
+    right: 2%;
+    cursor: pointer;
+}
+
+.prev {
+    left: 1.5rem;
+}
+
+.next {
+    right: 1.5rem;
+}
+
+.hide {
+    display: none;
+}
+
+.gallery.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1);
+}
