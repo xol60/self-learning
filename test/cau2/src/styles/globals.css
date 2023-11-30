@@ -1,0 +1,52 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+
+:root {
+    --headerColor: #e3faf9;
+    --contentColor: #ffffff;
+    --positionColor: #f2f3f5;
+    --cardColor: #fbfcfd;
+    --footerColor: #1f2329;
+    --fade: #656c7f;
+    --black: #181a1f;
+    --blue: #cef6f4;
+    --mainColor: #f8f9fa;
+    --white: #ffffff;
+    --subColor: #00bebd;
+    --menuColor: #e5e5e5;
+    --searchColor: linear-gradient(#3cb7b8, #f8f9fa);
+    --blueText: #05a5a7;
+    --buttonMore: linear-gradient(to right, #02b9b8, #078a8b)
+}
+
+body {
+    margin: 0;
+    background-color: var(--mainColor);
+}
+
+
+
+main,
+header,
+footer {
+    font-family: "Open Sans", sans-serif;
+    font-size: 0.9rem;
+    line-height: 20px;
+    font-weight: 400;
+    color: var(--black);
+    overflow-x: scroll;
+}
+
+a {
+    text-decoration: none;
+    color: var(--fade);
+}
+
+@media only screen and (max-width: 450px) {
+    * {
+        font-size: 12px;
+    }
+}

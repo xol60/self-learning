@@ -1,0 +1,23 @@
+import defaultTemplate from '@/public/template.png'
+export const Templates: ITemplate[] = [
+    { _id: '1', title: 'Mẫu JAVA đơn giản', image: defaultTemplate.src, category: 'Mới tốt nghiệp [<1 năm]', role: 'Phát triển thiết bị di động' },
+    { _id: '2', title: 'Mẫu JAVA đơn giản', image: defaultTemplate.src, category: 'Mới tốt nghiệp [<1 năm]', role: 'Phát triển thiết bị di động' },
+    { _id: '3', title: 'Mẫu JAVA đơn giản', image: defaultTemplate.src, category: 'Mới tốt nghiệp [<1 năm]', role: 'Phát triển thiết bị di động' },
+    { _id: '4', title: 'Mẫu JAVA đơn giản', image: defaultTemplate.src, category: 'Mới tốt nghiệp [<1 năm]', role: 'Phát triển thiết bị di động' },
+    { _id: '5', title: 'Mẫu JAVA đơn giản', image: defaultTemplate.src, category: 'Mới tốt nghiệp [<1 năm]', role: 'Phát triển thiết bị di động' },
+    { _id: '6', title: 'Mẫu JAVA đơn giản', image: defaultTemplate.src, category: 'Mới tốt nghiệp [<1 năm]', role: 'Phát triển thiết bị di động' },
+    { _id: '7', title: 'Mẫu JAVA đơn giản', image: defaultTemplate.src, category: 'Mới tốt nghiệp [<1 năm]', role: 'Phát triển thiết bị di động' },
+    { _id: '8', title: 'Mẫu JAVA đơn giản', image: defaultTemplate.src, category: 'Mới tốt nghiệp [<1 năm]', role: 'Phát triển thiết bị di động' },
+    { _id: '9', title: 'Mẫu JAVA đơn giản', image: defaultTemplate.src, category: 'Mới tốt nghiệp [<1 năm]', role: 'Phát triển thiết bị di động' },
+    { _id: '10', title: 'Mẫu JAVA đơn giản', image: defaultTemplate.src, category: 'Mới tốt nghiệp [<1 năm]', role: 'Phát triển thiết bị di động' },
+    { _id: '11', title: 'Mẫu JAVA đơn giản', image: defaultTemplate.src, category: 'Mới tốt nghiệp [<1 năm]', role: 'Phát triển thiết bị di động' },
+    { _id: '12', title: 'Mẫu JAVA đơn giản', image: defaultTemplate.src, category: 'Mới tốt nghiệp [<1 năm]', role: 'Phát triển thiết bị di động' },
+    { _id: '13', title: 'Mẫu JAVA đơn giản', image: defaultTemplate.src, category: 'Mới tốt nghiệp [<1 năm]', role: 'Phát triển thiết bị di động' },
+    { _id: '14', title: 'Mẫu JAVA đơn giản', image: defaultTemplate.src, category: 'Mới tốt nghiệp [<1 năm]', role: 'Phát triển thiết bị di động' },
+    { _id: '15', title: 'Mẫu JAVA đơn giản', image: defaultTemplate.src, category: 'Mới tốt nghiệp [<1 năm]', role: 'Phát triển thiết bị di động' },
+    { _id: '16', title: 'Mẫu JAVA đơn giản', image: defaultTemplate.src, category: 'Mới tốt nghiệp [<1 năm]', role: 'Phát triển thiết bị di động' },
+    { _id: '17', title: 'Mẫu JAVA đơn giản', image: defaultTemplate.src, category: 'Mới tốt nghiệp [<1 năm]', role: 'Phát triển thiết bị di động' },
+    { _id: '18', title: 'Mẫu JAVA đơn giản', image: defaultTemplate.src, category: 'Mới tốt nghiệp [<1 năm]', role: 'Phát triển thiết bị di động' },
+    { _id: '19', title: 'Mẫu JAVA đơn giản', image: defaultTemplate.src, category: 'Mới tốt nghiệp [<1 năm]', role: 'Phát triển thiết bị di động' },
+    { _id: '20', title: 'Mẫu JAVA đơn giản', image: defaultTemplate.src, category: 'Mới tốt nghiệp [<1 năm]', role: 'Phát triển thiết bị di động' },
+]
