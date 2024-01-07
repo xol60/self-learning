@@ -24,7 +24,10 @@ export class UsersService {
   findAll() {
     return `This action returns all users`;
   }
-
+  async findOneByUsername(username: string) {
+    const user = await this.userModel.findOne({ email: username })
+    return user
+  }
   async findOne(id: string) {
     const user = await this.userModel.findById(id).select("-password")
     return user
