@@ -1,0 +1,15 @@
+/Users/xoldat/Documents/Source/self-learning/c#/ls1/bin/Debug/net8.0/ls1
+/Users/xoldat/Documents/Source/self-learning/c#/ls1/bin/Debug/net8.0/ls1.deps.json
+/Users/xoldat/Documents/Source/self-learning/c#/ls1/bin/Debug/net8.0/ls1.runtimeconfig.json
+/Users/xoldat/Documents/Source/self-learning/c#/ls1/bin/Debug/net8.0/ls1.dll
+/Users/xoldat/Documents/Source/self-learning/c#/ls1/bin/Debug/net8.0/ls1.pdb
+/Users/xoldat/Documents/Source/self-learning/c#/ls1/obj/Debug/net8.0/ls1.GeneratedMSBuildEditorConfig.editorconfig
+/Users/xoldat/Documents/Source/self-learning/c#/ls1/obj/Debug/net8.0/ls1.AssemblyInfoInputs.cache
+/Users/xoldat/Documents/Source/self-learning/c#/ls1/obj/Debug/net8.0/ls1.AssemblyInfo.cs
+/Users/xoldat/Documents/Source/self-learning/c#/ls1/obj/Debug/net8.0/ls1.csproj.CoreCompileInputs.cache
+/Users/xoldat/Documents/Source/self-learning/c#/ls1/obj/Debug/net8.0/ls1.sourcelink.json
+/Users/xoldat/Documents/Source/self-learning/c#/ls1/obj/Debug/net8.0/ls1.dll
+/Users/xoldat/Documents/Source/self-learning/c#/ls1/obj/Debug/net8.0/refint/ls1.dll
+/Users/xoldat/Documents/Source/self-learning/c#/ls1/obj/Debug/net8.0/ls1.pdb
+/Users/xoldat/Documents/Source/self-learning/c#/ls1/obj/Debug/net8.0/ls1.genruntimeconfig.cache
+/Users/xoldat/Documents/Source/self-learning/c#/ls1/obj/Debug/net8.0/ref/ls1.dll
